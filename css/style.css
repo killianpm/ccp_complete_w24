@@ -1,0 +1,257 @@
+.skip {
+    position: absolute;
+    top: -20px;
+    display: block;
+    text-align: center;
+}
+
+.skip:focus {
+    position: static;
+    width: auto;
+    height: auto;
+}
+
+/* new additions based on feedback from mobile assignment */
+ul,
+ol {
+    margin: 0 2% 0 2%;
+}
+
+ul li {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+ol li {
+    list-style-type: decimal;
+    list-style-position: inside;
+}
+
+#navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    color: #444;
+    margin: 1%;
+    width: 90%;
+}
+
+#navbar li {
+    list-style-type: none;
+}
+
+.box {
+    background-color: #383535;
+    /* color: #FFFFFF; */
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    padding: 5%;
+    font-size: 1em;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* hover effect for box border and text in navbar */
+.box:not(.active):hover {
+    border: 2px solid turquoise;
+    background-color: #524545;
+}
+
+.box:not(.active):hover a {
+    color: turquoise;
+}
+
+/* ^ adjusted previous code to change box hover so that text and box border change together, and do not apply to active box */
+/* also see html files for onclick additions to navbar box classes to make entire boxes clickable to link to each page */
+
+a:link,
+a:visited {
+    color: #FFFFFF;
+    /* white text */
+    text-decoration: none;
+}
+
+.active {
+    background-color: blueviolet;
+    color: #FFFFFF;
+    /* white text */
+    border: 3px solid #FFFFFF;
+    text-transform: uppercase;
+}
+
+body {
+    font-size: 1em;
+    font-family: Arial, Verdana;
+    background-color: #000000;
+    /* black background */
+    color: #FFFFFF;
+    /* white text */
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    padding-top: 3%;
+    color: blueviolet;
+}
+
+h2 {
+    font-size: 2em;
+    text-align: left;
+    padding-top: 3%;
+    padding-bottom: 2%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+
+}
+
+h3 {
+    font-size: 1.5em;
+    text-align: left;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+
+}
+
+p {
+    font-size: 1em;
+    margin: 2% 2% 0 2%;
+    /* margin-top: 1%;
+    margin-left: 2%; */
+}
+
+img {
+    display: block;
+    padding: 5px;
+    margin: 10px;
+    border: 3px solid #FFFFFF;
+    /* min-width: 15%;
+    max-width: 50%; */
+}
+
+div {
+    padding: 10px;
+    /* max-width: 95%; */
+
+}
+
+.recipe_description {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2px;
+    justify-content: left;
+    align-items: center;
+    border: 2px solid white;
+    background-color: blueviolet;
+
+}
+
+.img3_gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 5px;
+    border: 2px solid white;
+    background-color: blueviolet;
+    justify-content: center;
+    align-items: center;
+}
+
+.img4_gallery {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-gap: 5px;
+    border: 2px solid white;
+    background-color: blueviolet;
+    justify-content: center;
+    align-items: center;
+}
+
+.travel_imgs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* style modifications for the Tablet View */
+@media (min-width: 768px) {
+
+    #navbar {
+        display: flex;
+        justify-content: space-around;
+        /* or flex: 1/auto */
+    }
+
+    #navbar li {
+        font-size: 1.25em;
+    }
+
+    .img3_gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .img4_gallery {
+        grid-template-columns: 2fr 2fr;
+
+        /* display: flex;
+        flex-basis: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: auto; */
+    }
+
+    .img3_gallery,
+    .img4_gallery,
+    .recipe_description {
+        box-shadow: 4px 8px #5a5a5a;
+        margin-bottom: 8px;
+    }
+
+    .petbio,
+    .recipe_description {
+        display: flex;
+    }
+    .petbio_img,
+    .recipe_description>img {
+        flex: 2;
+    }
+    .petbio_txt,
+    .recipe_description>div {
+        flex: 1;
+    }
+
+    .travel_imgs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .travel_imgs img {
+        width: 100%;
+    }
+
+}
+
+/* style modifications for the Desktop View */
+@media (min-width: 1024px) {
+
+    .img3_gallery,
+    .img4_gallery {
+        display: flex;
+        flex-basis: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: auto;
+    }
+
+    .travel_imgs {
+        display: grid;
+        grid-template-columns: 3fr 1fr 0;
+        grid-gap: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
